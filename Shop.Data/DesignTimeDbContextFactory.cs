@@ -17,7 +17,7 @@ namespace Shop.Data
                 .AddJsonFile("appsettings.Development.json")
                 .Build();
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            var connectionString = configuration.GetConnectionString("AzureConnection");
             builder.UseSqlServer(connectionString);
             return new ApplicationDbContext(builder.Options);
         }
